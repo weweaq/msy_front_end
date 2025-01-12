@@ -11,6 +11,9 @@ import "./index.css";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { menus } from "../../../config/menu";
+import { useSelector } from "react-redux";
+import { RootState } from "@/stores";
+import getAccessibleMenus from "@/access/menuAccess";
 
 interface Props {
   children: React.ReactNode;
@@ -18,6 +21,8 @@ interface Props {
 
 export default function BasicLayout({ children }: Props) {
   const pathname = usePathname();
+  // 当前登录用户
+  const loginUser = useSelector((state: RootState) => state.loginUser);
 
   return (
     <div
@@ -44,9 +49,9 @@ export default function BasicLayout({ children }: Props) {
         }}
         // 定义了顶部导航栏左侧的按钮
         avatarProps={{
-          src: "/assets/logo.png",
+          src: loginUser.userAvatar || "/assets/logo.png",
           size: "small",
-          title: "鱼鱼雨雨雨雨",
+          title: loginUser.userName || "鱼皮鸭",
           render: (props, dom) => {
             return (
               <Dropdown
@@ -91,8 +96,8 @@ export default function BasicLayout({ children }: Props) {
         // 定义了顶部导航栏的点击事件
         onMenuHeaderClick={(e) => console.log(e)}
         // 定义了菜单项
-        menuDataRender={(item) => {
-          return menus;
+        menuDataRender={() => {
+          return getAccessibleMenus(loginUser, menus);
         }}
         // 定义了菜单项如何渲染
         menuItemRender={(item, dom) => {
