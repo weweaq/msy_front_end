@@ -109,7 +109,7 @@ export default function BasicLayout({ children }: Props) {
             <Link
               href={item.path || "/"}
               target={item.target}
-              style={isActive ? { color: 'blue' } : {}}
+              style={isActive ? { color: "blue" } : {}}
             >
               {dom}
             </Link>
