@@ -9,6 +9,7 @@ import store, {AppDispatch} from "@/stores";
 import {getLoginUserUsingGet} from "@/api/userController";
 import {setLoginUser} from "@/stores/loginUser";
 import AccessLayout from "@/access/AccessLayout";
+import {DEFAULT_USER} from "@/constants/user";
 
 /**
  * 初始化布局（多封装一层，使得能调用 useDispatch）
@@ -27,16 +28,10 @@ const InitLayout: React.FC<
     // 获取用户信息
     const res = await getLoginUserUsingGet();
     if (res.data) {
+      // @ts-ignore
+      dispatch(setLoginUser(res.data));
     } else {
-      // todo 测试代码，实际可删除
-      setTimeout(() => {
-        const testUser = {
-          userName: "测试登录",
-          id: 1,
-          userAvatar: "https://www.code-nav.cn/logo.png",
-        };
-        dispatch(setLoginUser(testUser));
-      }, 3000);
+      dispatch(setLoginUser(DEFAULT_USER));
     }
   }, []);
 
