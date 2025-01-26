@@ -5,7 +5,7 @@ import request from "@/libs/request";
 /** addQuestion POST /api/question/add */
 export async function addQuestionUsingPost(
   body: API.QuestionAddRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseLong_>("/api/question/add", {
     method: "POST",
@@ -20,7 +20,7 @@ export async function addQuestionUsingPost(
 /** deleteQuestion POST /api/question/delete */
 export async function deleteQuestionUsingPost(
   body: API.DeleteRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean_>("/api/question/delete", {
     method: "POST",
@@ -35,7 +35,7 @@ export async function deleteQuestionUsingPost(
 /** batchDeleteQuestions POST /api/question/delete/batch */
 export async function batchDeleteQuestionsUsingPost(
   body: API.QuestionBatchDeleteRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean_>("/api/question/delete/batch", {
     method: "POST",
@@ -50,7 +50,7 @@ export async function batchDeleteQuestionsUsingPost(
 /** editQuestion POST /api/question/edit */
 export async function editQuestionUsingPost(
   body: API.QuestionEditRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean_>("/api/question/edit", {
     method: "POST",
@@ -66,7 +66,7 @@ export async function editQuestionUsingPost(
 export async function getQuestionVoByIdUsingGet(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
   params: API.getQuestionVOByIdUsingGETParams,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseQuestionVO_>("/api/question/get/vo", {
     method: "GET",
@@ -80,7 +80,7 @@ export async function getQuestionVoByIdUsingGet(
 /** listQuestionByPage POST /api/question/list/page */
 export async function listQuestionByPageUsingPost(
   body: API.QuestionQueryRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageQuestion_>("/api/question/list/page", {
     method: "POST",
@@ -95,7 +95,7 @@ export async function listQuestionByPageUsingPost(
 /** listQuestionVOByPage POST /api/question/list/page/vo */
 export async function listQuestionVoByPageUsingPost(
   body: API.QuestionQueryRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageQuestionVO_>(
     "/api/question/list/page/vo",
@@ -106,14 +106,14 @@ export async function listQuestionVoByPageUsingPost(
       },
       data: body,
       ...(options || {}),
-    }
+    },
   );
 }
 
 /** listQuestionVOByPageSentinel POST /api/question/list/page/vo/sentinel */
 export async function listQuestionVoByPageSentinelUsingPost(
   body: API.QuestionQueryRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageQuestionVO_>(
     "/api/question/list/page/vo/sentinel",
@@ -124,14 +124,14 @@ export async function listQuestionVoByPageSentinelUsingPost(
       },
       data: body,
       ...(options || {}),
-    }
+    },
   );
 }
 
 /** listMyQuestionVOByPage POST /api/question/my/list/page/vo */
 export async function listMyQuestionVoByPageUsingPost(
   body: API.QuestionQueryRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageQuestionVO_>(
     "/api/question/my/list/page/vo",
@@ -142,14 +142,14 @@ export async function listMyQuestionVoByPageUsingPost(
       },
       data: body,
       ...(options || {}),
-    }
+    },
   );
 }
 
 /** searchQuestionVOByPage POST /api/question/search/page/vo */
 export async function searchQuestionVoByPageUsingPost(
   body: API.QuestionQueryRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponsePageQuestionVO_>(
     "/api/question/search/page/vo",
@@ -160,14 +160,14 @@ export async function searchQuestionVoByPageUsingPost(
       },
       data: body,
       ...(options || {}),
-    }
+    },
   );
 }
 
 /** updateQuestion POST /api/question/update */
 export async function updateQuestionUsingPost(
   body: API.QuestionUpdateRequest,
-  options?: { [key: string]: any }
+  options?: { [key: string]: any },
 ) {
   return request<API.BaseResponseBoolean_>("/api/question/update", {
     method: "POST",
