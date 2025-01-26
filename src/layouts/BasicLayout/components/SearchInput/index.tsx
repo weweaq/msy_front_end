@@ -1,8 +1,11 @@
 import { Input } from "antd";
+import { useRouter } from "next/navigation";
 
 interface Props {}
 
 const SearchInput = (props: Props) => {
+  const router = useRouter();
+
   return (
     <div
       className="search-input"
@@ -19,7 +22,9 @@ const SearchInput = (props: Props) => {
           marginInlineEnd: 12,
         }}
         placeholder="搜索题目"
-        onSearch={(value) => {}}
+        onSearch={(value) => {
+          router.push(`/questions?q=${value}`);
+        }}
       />
     </div>
   );
