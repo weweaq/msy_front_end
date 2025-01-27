@@ -46,7 +46,7 @@ const UpdateBankModal: React.FC<Props> = (props) => {
     }
   }, [questionId]);
 
-  // 获取题库列表
+  // 获取题库列表，只运行一次
   const getQuestionBankList = async () => {
     // 题库数量不多，直接全量获取
     const pageSize = 200;
