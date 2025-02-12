@@ -5,6 +5,7 @@ import TagList from "@/components/TagList";
 import MdViewer from "@/components/MdViewer";
 import "github-markdown-css/github-markdown-light.css";
 import "./index.css";
+import useAddUserSignInRecord from "@/hooks/useAddUserSignInRecord";
 
 interface Props {
   question: API.QuestionVO;
@@ -17,7 +18,8 @@ interface Props {
  */
 const QuestionCard = (props: Props) => {
   const { question } = props;
-
+  // 签到
+  useAddUserSignInRecord();
   return (
     <div className="question-card">
       <Card>

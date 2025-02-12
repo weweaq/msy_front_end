@@ -68,7 +68,6 @@ export default async function BankQuestionPage({ params }) {
           <Title level={4} style={{ padding: "0 20px" }}>
             题库标题
           </Title>
-          // 菜单项高亮
           <Menu items={questionMenuItemList} selectedKeys={[questionId]} />
         </Sider>
         <Content>
