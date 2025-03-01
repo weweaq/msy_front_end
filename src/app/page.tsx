@@ -5,6 +5,7 @@ import Title from "antd/lib/typography/Title";
 import Link from "next/link";
 import QuestionBankList from "@/components/QuestionBankList";
 import QuestionList from "@/components/QuestionList";
+import CarouseExample from "@/components/CycleShow";
 
 export default async function HomePage() {
   let questionBankList = [];
@@ -33,6 +34,7 @@ export default async function HomePage() {
 
   return (
     <div id="homePage" className="max-width-content">
+      <CarouseExample></CarouseExample>
       <Flex justify="space-between" align="center">
         <Title level={3}>最新题库</Title>
         <Link href={"/banks"}>查看更多</Link>
